@@ -1,10 +1,8 @@
 import { ThemeProvider } from "styled-components"
 import { DefaultTheme } from "./styles/themes/default"
 import { GlobalStyle } from "./styles/global"
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
-import { Users } from "./pages/Users"
-import { CreateUsers } from "./pages/CreateUser"
-import { EditUser } from "./pages/EditUser"
+import { BrowserRouter, Link} from "react-router-dom"
+import { Router } from "./router"
 
 
 function App() {
@@ -20,12 +18,8 @@ function App() {
           <Link to="/create">Cadastrar Usuário</Link>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<Users />} />
-        <Route path="/create" element={<CreateUsers />} />
-        <Route path="/edit/:id" element={<EditUser />} />
-      </Routes>
-
+     
+        <Router />
         
         </BrowserRouter>
         
