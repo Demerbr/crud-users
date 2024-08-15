@@ -10,7 +10,6 @@ export const Router = ()=>{
     return(
         <Routes>
             <Route path="/" element={<DefaultLayout />}>
-
                 <Route path="/" element={<Users />} />
                 <Route path="/create" element={<CreateUsers />} />
                 <Route path="/edit/:id" element={<EditUser />} />

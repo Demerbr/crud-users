@@ -13,10 +13,10 @@ function App() {
 
         <BrowserRouter>
         
-        <nav>
+        {/* <nav>
           <Link to="/">Usuários</Link>
           <Link to="/create">Cadastrar Usuário</Link>
-      </nav>
+      </nav> */}
 
      
         <Router />
