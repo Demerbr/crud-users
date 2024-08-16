@@ -43,11 +43,15 @@ export const EditUser = () => {
   });
 
   useEffect(() => {
-    // Carregar dados do usuário a partir do ID
     const loadUserData = async () => {
+      if (!id) {
+        toast.error('ID do usuário não encontrado.');
+        navigate('/');
+        return;
+      }
+
       try {
         const userData = await CrudUsersApi.V1.Users.getById(id);
-        // Preencher os valores do formulário
         Object.keys(userData).forEach(key => {
           setValue(key as keyof IFormInputs, userData[key]);
         });
@@ -62,6 +66,11 @@ export const EditUser = () => {
   }, [id, setValue, navigate]);
 
   const onSubmit: SubmitHandler<IFormInputs> = async (data) => {
+    if (!id) {
+      toast.error('ID do usuário não encontrado.');
+      return;
+    }
+
     try {
       await CrudUsersApi.V1.Users.updateById(id, data);
       toast.success('Usuário atualizado com sucesso!');

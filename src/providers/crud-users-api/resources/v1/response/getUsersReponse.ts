@@ -1,4 +1,5 @@
 export interface UserResponse {
+    [key: string]: any;
     id: string;
     firstName: string;
     lastName: string;
@@ -9,6 +10,7 @@ export interface UserResponse {
     phone2: string;
     birthDate: string;
     gender: 'male' | 'female' | 'other';
+
 }
 
 
