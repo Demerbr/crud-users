@@ -7,7 +7,6 @@ import { UserResponse } from '../../providers/crud-users-api/resources/v1/respon
 
 
 export const Users = () => {
-
   const [users, setUsers] = useState<UserResponse[]>([])
 
 
@@ -15,16 +14,12 @@ export const Users = () => {
      
     const response = await CrudUsersApi.V1.Users.getAll()
 
-    console.log(response)
-
     setUsers(response)
   }
 
   useEffect(()=>{
     fetchData()
   }, [])
-
-
 
 
   return (

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Users } from "./pages/Users"
-import { CreateUsers } from "./pages/CreateUser"
+import { CreateUser } from "./pages/CreateUser"
 import { EditUser } from "./pages/EditUser"
 import { DefaultLayout } from "./layouts/DefaultLayout"
 
@@ -11,7 +11,7 @@ export const Router = ()=>{
         <Routes>
             <Route path="/" element={<DefaultLayout />}>
                 <Route path="/" element={<Users />} />
-                <Route path="/create" element={<CreateUsers />} />
+                <Route path="/create" element={<CreateUser />} />
                 <Route path="/edit/:id" element={<EditUser />} />
             </Route>
         </Routes>
