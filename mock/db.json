@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Carlos",
+      "lastName": "Silva",
+      "cpf": "12345678901",
+      "email": "carlos.silva@example.com",
+      "address": "Rua das Flores, 123, São Paulo, SP",
+      "phone1": "(11) 91234-5678",
+      "phone2": "(11) 98765-4321",
+      "birthDate": "1985-04-12",
+      "gender": "male"
+    },
+    {
+      "id": "a563",
+      "firstName": "Carlos",
+      "lastName": "Silva!",
+      "cpf": "12345678901",
+      "email": "carlos.silva@example.com",
+      "address": "Rua das Flores, 123, São Paulo, SP",
+      "phone1": "(11) 91234-5678",
+      "phone2": "(11) 98765-4321",
+      "birthDate": "1985-04-12",
+      "gender": "male"
+    }
+  ]
+}
