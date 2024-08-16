@@ -58,7 +58,7 @@ export const EditUser = () => {
         setLoading(false);
       } catch (error) {
         toast.error('Erro ao carregar dados do usuário.');
-        navigate('/listagem-de-usuarios');
+        navigate('/s');
       }
     };
 

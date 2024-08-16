@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledTableContainer = styled(TableContainer)`
   margin: 20px auto;
-  max-width: 1000px;
+  max-width: 1100px;
 
   @media (max-width: 1200px) {
     max-width: 90%;
@@ -48,8 +48,16 @@ export const StyledTableCell = styled(TableCell)`
   }
 `;
 
+export const StyledTableCellActions = styled(StyledTableCell)`
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+`
+
 export const ActionButton = styled(Button)`
-  margin-right: 10px;
 
   @media (max-width: 768px) {
     font-size: 0.875rem;
@@ -61,3 +69,5 @@ export const ActionButton = styled(Button)`
     padding: 4px 8px;
   }
 `;
+
+

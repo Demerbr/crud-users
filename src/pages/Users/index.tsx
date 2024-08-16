@@ -7,7 +7,8 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  Button
+  Button,
+  useMediaQuery
 } from '@mui/material';
 import * as S from './styles';
 import { CrudUsersApi } from '../../providers/crud-users-api';
@@ -19,6 +20,9 @@ export const Users = () => {
   const [users, setUsers] = useState<UserResponse[]>([]);
   const [open, setOpen] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
+
+  const isTablet = useMediaQuery('(max-width: 1024px)');
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
   const fetchData = async () => {
     const response = await CrudUsersApi.V1.Users.getAll();
@@ -55,8 +59,8 @@ export const Users = () => {
               <S.StyledTableHeadCell>Name</S.StyledTableHeadCell>
               <S.StyledTableHeadCell>Email</S.StyledTableHeadCell>
               <S.StyledTableHeadCell>CPF</S.StyledTableHeadCell>
-              <S.StyledTableHeadCell>Gênero</S.StyledTableHeadCell>
-              <S.StyledTableHeadCell>Endereço</S.StyledTableHeadCell>
+              {!isMobile && <S.StyledTableHeadCell>Gênero</S.StyledTableHeadCell>}
+              {!isTablet && <S.StyledTableHeadCell>Endereço</S.StyledTableHeadCell>}
               <S.StyledTableHeadCell align="center">Actions</S.StyledTableHeadCell>
             </TableRow>
           </TableHead>
@@ -67,27 +71,30 @@ export const Users = () => {
                 <S.StyledTableCell>{user.firstName}</S.StyledTableCell>
                 <S.StyledTableCell>{user.email}</S.StyledTableCell>
                 <S.StyledTableCell>{user.cpf}</S.StyledTableCell>
-                <S.StyledTableCell>{user.gender}</S.StyledTableCell>
-                <S.StyledTableCell>{user.address}</S.StyledTableCell>
-                <S.StyledTableCell align="center">
-                  <Link to={`/edit/${user.id}`} >
-                  <S.ActionButton variant="contained" color="primary">Edit</S.ActionButton>
+                {!isMobile && <S.StyledTableCell>{user.gender}</S.StyledTableCell>}
+                {!isTablet && <S.StyledTableCell>{user.address}</S.StyledTableCell>}
+                <S.StyledTableCellActions align="center"  >
+                <Link to={`/visualizar/${user.id}`} >
+                    <S.ActionButton size='small' variant="contained" color="primary">ver</S.ActionButton>
+                  </Link>
+                  <Link to={`/editar/${user.id}`} >
+                    <S.ActionButton size='small' variant="contained" color="secondary">Editar</S.ActionButton>
                   </Link>
                   <S.ActionButton
+                    size='small'
                     onClick={() => handleOpen(user.id)}
                     variant="contained"
-                    color="secondary"
+                    color="error"
                   >
-                    Delete
+                    Deletar
                   </S.ActionButton>
-                </S.StyledTableCell>
+                </S.StyledTableCellActions>
               </TableRow>
             ))}
           </TableBody>
         </S.StyledTable>
       </S.StyledTableContainer>
 
-      
       <Dialog
         open={open}
         onClose={handleClose}
@@ -101,10 +108,11 @@ export const Users = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button  onClick={handleClose} color="primary">
             Cancelar
           </Button>
           <Button
+           
             onClick={() => handlerDeleteUser(selectedUserId as string)}
             color="secondary"
             autoFocus
