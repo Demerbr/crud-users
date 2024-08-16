@@ -1,7 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
       "firstName": "Carlos",
       "lastName": "Silva",
       "cpf": "12345678901",
@@ -9,12 +8,12 @@
       "address": "Rua das Flores, 123, São Paulo, SP",
       "phone1": "(11) 91234-5678",
       "phone2": "(11) 98765-4321",
-      "birthDate": "1985-04-12",
-      "gender": "male"
+      "birthDate": "2000-04-12",
+      "gender": "male",
+      "id": "1"
     },
     {
-      "id": "a563",
-      "firstName": "Carlos",
+      "firstName": "José",
       "lastName": "Silva!",
       "cpf": "12345678901",
       "email": "carlos.silva@example.com",
@@ -22,46 +21,8 @@
       "phone1": "(11) 91234-5678",
       "phone2": "(11) 98765-4321",
       "birthDate": "1985-04-12",
-      "gender": "male"
-    },
-    {
-      "id": "372b"
-    },
-    {
-      "id": "9200",
-      "firstName": "demerson",
-      "lastName": "demerson",
-      "cpf": "12345678900",
-      "email": "detea@gmail.com",
-      "address": "afq234r52q354r1",
-      "phone1": "23421423452",
-      "phone2": "112331231241",
-      "birthDate": "1996-12-12T02:00:00.000Z",
-      "gender": "male"
-    },
-    {
-      "id": "0575",
-      "firstName": "teste",
-      "lastName": "teste",
-      "cpf": "12345678900",
-      "email": "gsdfg@gmai.com",
-      "address": "sdhrfwedfh",
-      "phone1": "12311241234",
-      "phone2": "12342131231234",
-      "birthDate": "1996-12-12T02:00:00.000Z",
-      "gender": "male"
-    },
-    {
-      "id": "e027",
-      "firstName": "testeast",
-      "lastName": "testeast",
-      "cpf": "17409763710",
-      "email": "sfdgdfg@gmail.com",
-      "address": "aswfgsdfgsdfg",
-      "phone1": "321432143214",
-      "phone2": "213q43124141234",
-      "birthDate": "1997-12-12T02:00:00.000Z",
-      "gender": "male"
+      "gender": "male",
+      "id": "a563"
     }
   ]
 }
